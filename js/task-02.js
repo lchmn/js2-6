@@ -1,20 +1,22 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const ingredientsList = [
-      "Potatoes",
-      "Mushrooms",
-      "Garlic",
-      "Tomatos",
-      "Herbs",
-      "Condiments",
-    ];
+document.addEventListener('DOMContentLoaded', () => {
+  const ingredientsList = [
+    "Potatoes",
+    "Mushrooms",
+    "Garlic",
+    "Tomatos",
+    "Herbs",
+    "Condiments",
+  ];
 
-    const ingredientsUl = document.getElementById('ingredients');
+  const ul = document.getElementById('ingredients');
+  const fragment = document.createDocumentFragment();
 
-    ingredientsList.forEach(ingredient => {
-      const li = document.createElement('li'); 
-      li.textContent = ingredient; 
-      li.classList.add('item'); 
+  ingredientsList.forEach(ingredient => {
+    const li = document.createElement('li');
+    li.textContent = ingredient;
+    li.classList.add('item');
+    fragment.appendChild(li);
+  });
 
-      ingredientsUl.appendChild(li);
-    });
+  ul.appendChild(fragment);
 });
